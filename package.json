@@ -4,7 +4,10 @@
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "install": "^0.13.0",
-    "it": "^1.1.1"
+    "it": "^1.1.1",
+    "mongoose": "^8.10.1",
+    "os": "^0.1.2",
+    "process": "^0.11.10"
   },
   "devDependencies": {
     "morgan": "^1.10.0"

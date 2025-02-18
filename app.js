@@ -13,7 +13,9 @@ app.use(compression())
 // morgan("short")
 // morgan("tiny")
 //init db
-
+require('./src/dbs/init.mongodb')
+const {checkOverload }=require('./src/helpers/check.connect')
+checkOverload ()
 //init routes
 app.get('/', (req, res, next) => {
     const strCompress = 'Duong DZ Qua'
