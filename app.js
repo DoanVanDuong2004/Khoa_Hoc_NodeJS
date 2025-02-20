@@ -5,7 +5,7 @@ const compression = require('compression')
 require('dotenv').config()
 const app = express()
 
-console.log(`Process::`,process.env);
+// console.log(`Process::`,process.env);
 
 // init middlewares
 app.use(morgan("dev"))
@@ -17,15 +17,9 @@ app.use(compression())
 // morgan("tiny")
 //init db
 require('./src/dbs/init.mongodb')
-const {checkOverload }=require('./src/helpers/check.connect')
-checkOverload ()
-//init routes
-app.get('/', (req, res, next) => {
-    const strCompress = 'Duong DZ Qua'
-    return res.status(200).json({
-        message: 'Welcome Van Duong DZ',
-        metadata: strCompress.repeat(10000)
-    })
-})
+// const {checkOverload }=require('./src/helpers/check.connect')
+// checkOverload ()
+// //init routes
+app.use('/',require('./src/routes/index'))
 //handing error
 module.exports = app
