@@ -1,9 +1,8 @@
 //dùng lệnh !dmbg
-const { model, Schema, Types } = require('mongoose'); // Erase if already required
+const { model, Schema, Types, default: mongoose } = require('mongoose'); // Erase if already required
 const { type } = require('os');
 const DOCUMEBT_NAME = 'Shop'
-const COLECTION_NAME = 'Shops'
-
+const COLLECTION_NAME = 'Shops'
 // Declare the Schema of the Mongo model
 var shopSchema = new Schema({
     name: {
@@ -25,7 +24,7 @@ var shopSchema = new Schema({
         type: String,
         required: true,
     },
-    verfify: {
+    verify: {
         type: Schema.Types.Boolean,
         default: false
     },
@@ -34,10 +33,9 @@ var shopSchema = new Schema({
         default: []
     }
 }, {
-    timestamps:true,
-    collection:COLECTION_NAME
-    l̥
+    timestamps: true,
+    collection: COLLECTION_NAME
 });
 
 //Export the model
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model(DOCUMEBT_NAME, shopSchema);

@@ -1,14 +1,18 @@
-class AcesssController{
-    signUp = async(req,res,next)=>{
+const AccessService = require("../services/access.service");
+const express = require("express");
+
+class AccessController {
+    signUp = async (req, res, next) => {
         try {
-            console.log(`[P]:: signUp::`,req.body)
-            return res.status(201).json({
-                code:'20001',
-                metadata:{userid:1}
-            })
+            console.log(`[P]:: signUp::`, req.body);
+
+            // Gọi AccessService.signUp đúng cách
+            const result = await AccessService.signUp(req.body);
+            return res.status(201).json(result);
         } catch (error) {
-            next(error)
+            next(error);
         }
-    }
+    };
 }
-module.exports=new AcesssController()
+
+module.exports = new AccessController();
