@@ -1,3 +1,4 @@
+require('dotenv').config(); 
 const mongoose = require('mongoose')
 const{db:{host,name,port}}=require('../configs/config.mongodb')
 const connectString = `mongodb://${host}:${port}/${name}`

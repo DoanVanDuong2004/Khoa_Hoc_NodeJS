@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { log } = require("console");
 const app = require("./app");
 const PORT = process.env.PORT
